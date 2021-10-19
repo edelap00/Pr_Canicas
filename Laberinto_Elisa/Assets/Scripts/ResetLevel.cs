@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class NextScene : MonoBehaviour
+public class ResetLevel : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -12,22 +12,19 @@ public class NextScene : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        Reset();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Reset()
     {
         int actualScene = SceneManager.GetActiveScene().buildIndex;
-
-        if (other.gameObject.name == "canica")
+        if (transform.position.y < -0.15)
         {
-            print("dentro");
-            actualScene++;
-          // int  actual = SceneManager.GetActiveScene;
-           SceneManager.LoadScene(actualScene);
+            print("Ostia terrible");
+            SceneManager.LoadScene(actualScene); 
+
         }
-        
     }
 }

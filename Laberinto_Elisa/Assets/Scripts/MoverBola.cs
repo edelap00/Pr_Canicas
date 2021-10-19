@@ -21,7 +21,7 @@ public class MoverBola : MonoBehaviour
     void FixedUpdate()
     {
         Desplazamiento();
-        Reset();
+     
      
     }
 
@@ -39,13 +39,4 @@ public class MoverBola : MonoBehaviour
 
     }
 
-    private void Reset()
-    {
-        if (transform.position.y<-0.15)
-        {
-            print("Ostia terrible");
-            SceneManager.LoadScene("Level1"); //tambien puedo cargar esta escena por su número del Build de Unity, es decir, 0
-
-        }
-    }
 }
